@@ -87,7 +87,7 @@ const auth: FC = () => {
               />
             </div>
             <button 
-            onClick={register}
+            onClick={variant === "login" ? login : register}
             className="bg-blue-600 py-3 text-white rounded-md w-full mt-5 hover:bg-blue-500 transition"> {variant === 'login' ? 'Login' : 'Sign up'}</button>
             <p className='text-neutral-500 mt-4'> 
             {variant === 'login' ? 'First time using Netflix?' : 'Already have an account?'} 
