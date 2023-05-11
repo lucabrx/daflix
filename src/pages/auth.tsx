@@ -4,8 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState, type FC, useCallback } from 'react';
 import { signIn } from "next-auth/react"
-
-
+import {FcGoogle} from 'react-icons/fc'
 const auth: FC = () => {
   const router = useRouter();
     const [email, setEmail] = useState('');
@@ -89,6 +88,20 @@ const auth: FC = () => {
             <button 
             onClick={variant === "login" ? login : register}
             className="bg-blue-600 py-3 text-white rounded-md w-full mt-5 hover:bg-blue-500 transition"> {variant === 'login' ? 'Login' : 'Sign up'}</button>
+            <div className='flex items-center justify-center mt-5 gap-5 w-full'>
+              <span className='border-b-2 border-neutral-500 h-1 w-5'></span>
+              <span>or</span>
+              <span className='border-b-2 border-neutral-500 h-1 w-5'></span>
+
+            </div>
+            <div className='flex items-center justify-center mt-5 gap-5'>
+              
+              <button
+              className='w-full  bg-blue-600 flex items-center justify-center cursor-pointer rounded-md py-3 text-white   hover:bg-blue-500 transition'
+              onClick={() => signIn('google', { callbackUrl: '/' })}
+              ><FcGoogle /> <span className='ml-2'>Google</span></button>
+              
+              </div>
             <p className='text-neutral-500 mt-4'> 
             {variant === 'login' ? 'First time using Netflix?' : 'Already have an account?'} 
             <span onClick={toggleVariant} className='text-neutral-900 hover:underline cursor-pointer ml-1'> {variant === 'login' ? 'Create an account' : 'Login'}
