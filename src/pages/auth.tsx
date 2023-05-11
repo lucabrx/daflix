@@ -6,7 +6,6 @@ import { useState, type FC, useCallback } from 'react';
 import { signIn } from "next-auth/react"
 import {FcGoogle} from 'react-icons/fc'
 const auth: FC = () => {
-  const router = useRouter();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -22,15 +21,14 @@ const auth: FC = () => {
           await signIn('credentials', {
             email,
             password,
-            redirect: false,
-            callbackUrl: '/'
+            redirect: true,
+            callbackUrl: '/profiles'
           });
     
-          router.push('/');
         } catch (error) {
           console.log(error);
         }
-      }, [email, password, router]);
+      }, [email, password]);
 
       const register = useCallback(async () => {
         try {
@@ -98,7 +96,7 @@ const auth: FC = () => {
               
               <button
               className='w-full  bg-blue-600 flex items-center justify-center cursor-pointer rounded-md py-3 text-white   hover:bg-blue-500 transition'
-              onClick={() => signIn('google', { callbackUrl: '/' })}
+              onClick={() => signIn('google', { callbackUrl: '/profiles' })}
               ><FcGoogle /> <span className='ml-2'>Google</span></button>
               
               </div>
