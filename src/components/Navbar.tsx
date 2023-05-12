@@ -3,20 +3,16 @@ import { useCallback, type FC, useEffect, useState } from 'react';
 import NavbarItem from './NavbarItem';
 import MobileMenu from './MobileScreen';
 import AccountMenu from './AccountMenu';
-import useCurrentUser from '@/hooks/useCurrentUser';
 
-interface NavbarProps {
-  
-}
+
 
 const TOP_OFFSET = 66;
 
 
-const Navbar: FC<NavbarProps> = ({}) => {
+const Navbar = () => {
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-  const {data: currentUser} = useCurrentUser();
 
   useEffect(() => {
     const handleScroll = () => {

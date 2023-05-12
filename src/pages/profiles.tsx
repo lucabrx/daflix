@@ -1,3 +1,4 @@
+// disable eslint for this file
 import { NextPageContext } from 'next';
 import { getSession } from 'next-auth/react';
 import { useCallback, type FC } from 'react';

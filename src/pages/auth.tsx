@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useState, type FC, useCallback } from 'react';
 import { signIn } from "next-auth/react"
 import {FcGoogle} from 'react-icons/fc'
-const auth: FC = () => {
+const Auth: FC = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -112,4 +112,4 @@ const auth: FC = () => {
 )
 }
 
-export default auth
+export default Auth
