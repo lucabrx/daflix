@@ -18,7 +18,7 @@ const AccountMenu: FC<AccountMenuProps> = ({ visible }) => {
     <div className="bg-neutral-50 w-56 absolute top-14 right-0 py-5 flex-col border-2 border-gray-200 flex">
       <div className="flex flex-col gap-3">
         <div className="px-3 group/item flex flex-row gap-3 items-center w-full">
-          <img className="w-8 rounded-md" src="/images/default-blue.png" alt="" />
+          <img className="w-8 rounded-md" src="/default-blue.png" alt="" />
           <p className="text-neutral-900 text-sm group-hover/item:underline">{currentUser?.name}</p>
         </div>
       </div>
