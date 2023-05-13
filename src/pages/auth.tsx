@@ -48,7 +48,7 @@ const Auth: FC = () => {
   return (
 <div className='relative h-full w-full bg-[url("/hero.jpg")] bg-no-repeat bg-fixed bg-center bg-cover'> 
 <div className='bg-neutral-200 w-full h-full lg:bg-opacity-20'>
-    <div className='px-12 py-5 '>
+    <div className='px-12 py-5 flex w-fulll justify-center md:justify-start'>
         <div className='h-10 w-48 relative '>
         <Image src='/logo.svg' fill alt="logo" />
         </div>    
